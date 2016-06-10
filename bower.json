@@ -1,0 +1,13 @@
+{
+  "name": "koapp-module-embed",
+  "authors": "King of App",
+  "description": "embed module for King of App",
+  "keywords": [
+    "kingofapp",
+    "module"
+  ],
+  "license": "MIT",
+  "homepage": "http://kingofapp.com",
+  "private": true,
+  "dependencies": {}
+}
