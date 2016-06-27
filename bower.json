@@ -1,7 +1,7 @@
 {
-  "name": "koapp-module-embed",
+  "name": "koapp-module-webview",
   "authors": "King of App",
-  "description": "embed module for King of App",
+  "description": "webview module for King of App",
   "keywords": [
     "kingofapp",
     "module"

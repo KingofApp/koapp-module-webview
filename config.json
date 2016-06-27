@@ -1,13 +1,13 @@
 {
-  "name": "Webview Example",
+  "name": "Webview",
   "identifier": "webview",
   "description": {
     "es-ES": "Esta opción te permite incrustar una página web en tu App. De este modo tus seguidores podrán navegar por ella sin necesidad de abandonar la aplicación. Para ello solo será necesario que entres la dirección web que quieras compartir. P.e. http://www.kingofapp.com",
     "en-US": "Esta opción te permite incrustar una página web en tu App. De este modo tus seguidores podrán navegar por ella sin necesidad de abandonar la aplicación. Para ello solo será necesario que entres la dirección web que quieras compartir. P.e. http://www.kingofapp.com"
   },
   "documentation": {
-    "es-ES": "# **(How to) Configurar el Webview Module**\r\n\r\nSi bien no es especialmente recomendable su uso (a los markets y especialmente a **Apple**, no les acaba de gustar este formato) hay ocasiones en que no queda m\u00E1s remedio que **embeber una p\u00E1gina web en una App**. Para estos casos, en King of App hemos desarrollado este m\u00F3dulo de r\u00E1pida y f\u00E1cil configuraci\u00F3n.\r\n\r\nAl tratarse de un contenido embebido s\u00F3lo hay que rellenar el campo habilitado con **la URL de destino**. Nada m\u00E1s y nada menos. Nosotros nos encargamos de que salga en pantalla cogiendo los **par\u00E1metros responsive** de la web.\r\n\r\nLo dicho, si bien este m\u00F3dulo te puede ayudar en m\u00FAltiples ocasiones, como todo gran poder, hay que saber utilizarlo con moderaci\u00F3n y siempre combinado con otros m\u00F3dulos de contenido.",
-    "en-US": "# **(How to) Configurar el Webview Module**\r\n\r\nSi bien no es especialmente recomendable su uso (a los markets y especialmente a **Apple**, no les acaba de gustar este formato) hay ocasiones en que no queda m\u00E1s remedio que **embeber una p\u00E1gina web en una App**. Para estos casos, en King of App hemos desarrollado este m\u00F3dulo de r\u00E1pida y f\u00E1cil configuraci\u00F3n.\r\n\r\nAl tratarse de un contenido embebido s\u00F3lo hay que rellenar el campo habilitado con **la URL de destino**. Nada m\u00E1s y nada menos. Nosotros nos encargamos de que salga en pantalla cogiendo los **par\u00E1metros responsive** de la web.\r\n\r\nLo dicho, si bien este m\u00F3dulo te puede ayudar en m\u00FAltiples ocasiones, como todo gran poder, hay que saber utilizarlo con moderaci\u00F3n y siempre combinado con otros m\u00F3dulos de contenido."
+    "es-ES": "# **(How to) Configurar el Webview Module**\r\n\r\nSi bien no es especialmente recomendable su uso (a los markets y especialmente a **Apple**, no les acaba de gustar este formato) hay ocasiones en que no queda m\u00E1s remedio que **embeber una p\u00E1gina web en una App**. Para estos casos, en King of App hemos desarrollado este m\u00F3dulo de r\u00E1pida y f\u00E1cil configuraci\u00F3n.\r\n\r\nAl tratarse de un contenido webview s\u00F3lo hay que rellenar el campo habilitado con **la URL de destino**. Nada m\u00E1s y nada menos. Nosotros nos encargamos de que salga en pantalla cogiendo los **par\u00E1metros responsive** de la web.\r\n\r\nLo dicho, si bien este m\u00F3dulo te puede ayudar en m\u00FAltiples ocasiones, como todo gran poder, hay que saber utilizarlo con moderaci\u00F3n y siempre combinado con otros m\u00F3dulos de contenido.",
+    "en-US": "# **(How to) Configurar el Webview Module**\r\n\r\nSi bien no es especialmente recomendable su uso (a los markets y especialmente a **Apple**, no les acaba de gustar este formato) hay ocasiones en que no queda m\u00E1s remedio que **embeber una p\u00E1gina web en una App**. Para estos casos, en King of App hemos desarrollado este m\u00F3dulo de r\u00E1pida y f\u00E1cil configuraci\u00F3n.\r\n\r\nAl tratarse de un contenido webview s\u00F3lo hay que rellenar el campo habilitado con **la URL de destino**. Nada m\u00E1s y nada menos. Nosotros nos encargamos de que salga en pantalla cogiendo los **par\u00E1metros responsive** de la web.\r\n\r\nLo dicho, si bien este m\u00F3dulo te puede ayudar en m\u00FAltiples ocasiones, como todo gran poder, hay que saber utilizarlo con moderaci\u00F3n y siempre combinado con otros m\u00F3dulos de contenido."
   },
   "descriptionShort": {
     "es-ES": "Esta opción te permite incrustar una página web dentro de tu App!",
@@ -30,9 +30,7 @@
   ],
   "view": "modules/webview/index.html",
   "files": [
-    "modules/webview/controller.js",
-    "modules/webview/directive.js",
-    "modules/webview/styles.html"
+    "modules/webview/controller.js"
   ],
   "scope": {
     "url": ""
@@ -53,13 +51,13 @@
     "dragDrop": true
   },
   "images": {
-    "list": "modules/webview/images/webview_list.png",
+    "list": "modules/webview/images/Webview_list.png",
     "screenshots": [
-      "modules/webview/images/webview_screenshot01.png",
-      "modules/webview/images/webview_screenshot02.png"
+      "modules/webview/images/Webview_screenshot01.png",
+      "modules/webview/images/Webview_screenshot02.png"
     ],
-    "popover": "modules/webview/images/webview_popover.png",
-    "banner": "modules/webview/images/webview_popover.png",
-    "logo": "modules/webview/images/webview_icon.png"
+    "popover": "modules/webview/images/Webview_popover.png",
+    "banner": "modules/webview/images/Webview_popover.png",
+    "logo": "modules/webview/images/Webview_icon.png"
   }
 }

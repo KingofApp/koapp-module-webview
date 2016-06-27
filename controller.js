@@ -1,16 +1,17 @@
 angular
-  .controller('embedCtrl', loadFunction);
+  .controller('webviewCtrl', loadFunction);
 
 loadFunction.$inject = ['$scope', 'structureService', 'storageService', '$location'];
+//TODO renombrar servicio a simplewebviewlogin
+// Variables del servicio y formly tipo variable t y escape condition en url
+//Check jsons webview + service webview login
 
 function loadFunction($scope, structureService, storageService, $location) {
+  var escapeCondition = "";
   //Register upper level modules
-  structureService.registerModule($location, $scope, 'embed');
-  $scope.embed.showLogin = false;
-  $scope.embed.showLoading = true;
-
-  $scope.redirectToLogin = function() {
-    storageService.del('embedLogin').then(function(data) {
+  structureService.registerModule($location, $scope, 'webview');
+  function redirectToLogin() {
+    storageService.del('webviewLogin').then(function(data) {
       storageService.get('loginUrl').then(function(src) {
         if(src && src.value){
           $location.path(src.value);
@@ -19,48 +20,30 @@ function loadFunction($scope, structureService, storageService, $location) {
     });
   }
 
+  storageService.get('webviewLogin').then(function(data) {
+    if (data && data.value && data.value.token) {
+      //Construct url webview with token
+      $scope.webview.urlWebview = $scope.webview.modulescope.url + '?' + data.value.tokenName + '=' + data.value.token;
+      //Set escape condition
+      escapeCondition = data.value.escapeCondition;
+    }else{
+      //Load normal webview
+      $scope.webview.urlWebview = $scope.webview.modulescope.url;
+    }
+    document.addEventListener("deviceready", onDeviceReady, false);
+  });
 
-  // var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
-  document.addEventListener("deviceready", onDeviceReady, false);
   function onDeviceReady() {
-    storageService.get('embedLogin').then(function(data) {
-      if (data && data.value) {
-        //Load con token
-        var ref = cordova.InAppBrowser.open($scope.embed.modulescope.url, '_blank', 'location=no,toolbar=yes,enableViewportScale=yes,closebuttoncaption=Logout');
-        //       var myCallback = function(event) { alert(event.url); }
-        ref.addEventListener('exit', function() {
-        alert("Redirect");
-        });
-            post($scope.embed.modulescope.url, data.value);
-          $scope.embed.showLogin = true;
-      }else{
-        post($scope.embed.modulescope.url, {});
+    var ref = cordova.InAppBrowser.open($scope.webview.urlWebview, '_blank', 'location=no,toolbar=no,enableViewportScale=yes,closebuttoncaption=Logout');
+
+    // Android behaviour
+    ref.addEventListener('loadstart',  function(event) {
+      if(event.url.indexOf(escapeCondition) > -1){
+        ref.close();
+        redirectToLogin();
       }
     });
 
   }
 
-
-  function post(path, params, method) {
-    method = method || 'post';
-    var form = document.createElement('form');
-    form.setAttribute('method', method);
-    form.setAttribute('action', path);
-    form.setAttribute('target', 'embedtest');
-
-    for (var key in params) {
-      if (params.hasOwnProperty(key)) {
-        var hiddenField = document.createElement('input');
-        hiddenField.setAttribute('type', 'hidden');
-        hiddenField.setAttribute('name', key);
-        hiddenField.setAttribute('value', params[key]);
-        form.appendChild(hiddenField);
-      }
-    }
-
-    document.body.appendChild(form);
-      setTimeout(function () {
-        form.submit();
-      }, 10);
-    }
 }
