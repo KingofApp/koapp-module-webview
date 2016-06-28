@@ -1,12 +1,15 @@
 angular
   .controller('webviewCtrl', loadFunction);
 
-loadFunction.$inject = ['$scope', 'structureService', 'storageService', '$location'];
+loadFunction.$inject = ['$scope', 'structureService', 'storageService', '$location', '$document'];
 //TODO renombrar servicio a simplewebviewlogin
 // Variables del servicio y formly tipo variable t y escape condition en url
 //Check jsons webview + service webview login
 
-function loadFunction($scope, structureService, storageService, $location) {
+function loadFunction($scope, structureService, storageService, $location, $document) {
+  $scope.hideWarning = true;
+  showWarning();
+
   var escapeCondition = "";
   //Register upper level modules
   structureService.registerModule($location, $scope, 'webview');
@@ -44,6 +47,11 @@ function loadFunction($scope, structureService, storageService, $location) {
       }
     });
 
+  }
+  function showWarning() {
+    setTimeout(function () {
+      $document.find("div.hiddenDiv").show();
+    }, 2000);
   }
 
 }
