@@ -7,8 +7,12 @@ loadFunction.$inject = ['$scope', 'structureService', 'storageService', '$locati
 //Check jsons webview + service webview login
 
 function loadFunction($scope, structureService, storageService, $location, $document) {
-  $scope.hideWarning = true;
-  showWarning();
+  
+  console.log($location);
+  if ($location.$$absUrl.indexOf('builder') !== -1) {
+    showWarning();
+  }
+
 
   var escapeCondition = "";
   //Register upper level modules
@@ -51,7 +55,7 @@ function loadFunction($scope, structureService, storageService, $location, $docu
   function showWarning() {
     setTimeout(function () {
       $document.find("div.hiddenDiv").show();
-    }, 2000);
+    }, 1000);
   }
 
 }
