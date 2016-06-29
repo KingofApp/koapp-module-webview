@@ -5,13 +5,13 @@ loadFunction.$inject = ['$scope', 'structureService', 'storageService', '$locati
 
 function loadFunction($scope, structureService, storageService, $location, $document) {
 
-  console.log($location);
   if ($location.$$absUrl.indexOf('builder') !== -1) {
     showWarning();
   }
 
 
   var escapeCondition = "";
+  var toolbar = "";
   //Register upper level modules
   structureService.registerModule($location, $scope, 'webview');
   function redirectToLogin() {
@@ -30,15 +30,17 @@ function loadFunction($scope, structureService, storageService, $location, $docu
       $scope.webview.urlWebview = $scope.webview.modulescope.url + '?' + data.value.tokenName + '=' + data.value.token;
       //Set escape condition
       escapeCondition = data.value.escapeCondition;
+      toolbar = "no";
     }else{
       //Load normal webview
       $scope.webview.urlWebview = $scope.webview.modulescope.url;
+      toolbar = "yes";
     }
     document.addEventListener("deviceready", onDeviceReady, false);
   });
 
   function onDeviceReady() {
-    var ref = cordova.InAppBrowser.open($scope.webview.urlWebview, '_blank', 'location=no,toolbar=no,enableViewportScale=yes,closebuttoncaption=Logout');
+    var ref = cordova.InAppBrowser.open($scope.webview.urlWebview, '_blank', 'location=no,toolbar=' + toolbar + ',enableViewportScale=yes,closebuttoncaption=Logout');
 
     // Android behaviour
     ref.addEventListener('loadstart',  function(event) {
