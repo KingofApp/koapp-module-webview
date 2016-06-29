@@ -2,12 +2,9 @@ angular
   .controller('webviewCtrl', loadFunction);
 
 loadFunction.$inject = ['$scope', 'structureService', 'storageService', '$location', '$document'];
-//TODO renombrar servicio a simplewebviewlogin
-// Variables del servicio y formly tipo variable t y escape condition en url
-//Check jsons webview + service webview login
 
 function loadFunction($scope, structureService, storageService, $location, $document) {
-  
+
   console.log($location);
   if ($location.$$absUrl.indexOf('builder') !== -1) {
     showWarning();
