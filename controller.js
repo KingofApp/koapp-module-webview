@@ -10,7 +10,7 @@ function loadFunction($scope, structureService, storageService, $location, $docu
   }
 
 
-  var escapeCondition = "";
+  var escapeCondition = "UmFuZG9tVXJsU2V2jcmV0";
   var toolbar = "";
   //Register upper level modules
   structureService.registerModule($location, $scope, 'webview');
