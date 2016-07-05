@@ -1,9 +1,9 @@
 angular
   .controller('webviewCtrl', loadFunction);
 
-loadFunction.$inject = ['$scope', 'structureService', 'storageService', '$location', '$document'];
+loadFunction.$inject = ['$scope', 'structureService', 'storageService', '$location', '$document', '$filter'];
 
-function loadFunction($scope, structureService, storageService, $location, $document) {
+function loadFunction($scope, structureService, storageService, $location, $document, $filter) {
 
   if ($location.$$absUrl.indexOf('builder') !== -1) {
     showWarning();
@@ -40,7 +40,7 @@ function loadFunction($scope, structureService, storageService, $location, $docu
   });
 
   function onDeviceReady() {
-    var ref = cordova.InAppBrowser.open($scope.webview.urlWebview, '_blank', 'location=no,toolbar=' + toolbar + ',enableViewportScale=yes,closebuttoncaption=Logout');
+    var ref = cordova.InAppBrowser.open($scope.webview.urlWebview, '_blank', 'location=no,toolbar=' + toolbar + ',enableViewportScale=yes,closebuttoncaption='+$filter('translate')('webview.close'));
 
     // Android behaviour
     ref.addEventListener('loadstart',  function(event) {
