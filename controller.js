@@ -7,9 +7,6 @@ function loadFunction($scope, structureService, storageService, $location, $docu
   //Register upper level modules
   structureService.registerModule($location, $scope, 'webview');
 
-  if ($location.$$absUrl.indexOf('builder') !== -1) {
-    showWarning();
-  }
 
   $scope.showIframe = false;
   $scope.redirectIndex = redirectIndex;
@@ -79,10 +76,5 @@ function loadFunction($scope, structureService, storageService, $location, $docu
       structureService.launchSpinner('.transitionloader');
     }, 100);
   }
-  function showWarning() {
-    setTimeout(function () {
-      $document.find("div.hiddenDiv").show();
-    }, 1000);
-  }
-
+  
 }
