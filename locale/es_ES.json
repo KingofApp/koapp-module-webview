@@ -1,4 +1,4 @@
 {
   "webview.description": "El webview se debería haber abierto. Actualmente el builder no soporta la previsualización.",
-  "webview.close": "Salir"
+  "webview.close": "Cerrar"
 }

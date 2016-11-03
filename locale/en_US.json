@@ -1,4 +1,4 @@
 {
   "webview.description": "WebView should be openned. Builder preview not currently supported.",
-  "webview.close": "Logout"
+  "webview.close": "Close"
 }
