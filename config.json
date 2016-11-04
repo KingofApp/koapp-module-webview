@@ -32,7 +32,7 @@
   "files": [
     "modules/webview/controller.js",
     "modules/webview/directive.js",
-    "modules/embed/styles.html"
+    "modules/webview/styles.html"
   ],
   "libs": [
     {
