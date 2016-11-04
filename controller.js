@@ -4,16 +4,16 @@ angular
 loadFunction.$inject = ['$scope', 'structureService', 'storageService', '$location', '$document', '$filter'];
 
 function loadFunction($scope, structureService, storageService, $location, $document, $filter) {
-
-  if ($location.$$absUrl.indexOf('builder') !== -1) {
-    showWarning();
-  }
-
-
-  var escapeCondition = "UmFuZG9tVXJsU2V2jcmV0";
-  var toolbar = "";
   //Register upper level modules
   structureService.registerModule($location, $scope, 'webview');
+
+
+  $scope.showIframe = false;
+  $scope.redirectIndex = redirectIndex;
+
+  var escapeCondition = 'UmFuZG9tVXJsU2V2jcmV0';
+  var toolbar = '';
+
   function redirectToLogin() {
     storageService.del('webviewLogin').then(function(data) {
       storageService.get('loginUrl').then(function(src) {
@@ -32,11 +32,16 @@ function loadFunction($scope, structureService, storageService, $location, $docu
       escapeCondition = data.value.escapeCondition;
       toolbar = "no";
     }else{
-      //Load normal webview
+      //Load regular webview
       $scope.webview.urlWebview = $scope.webview.modulescope.url;
       toolbar = "yes";
     }
-    document.addEventListener("deviceready", onDeviceReady, false);
+
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    } else {
+      loadIframe();
+    }
   });
 
   function onDeviceReady() {
@@ -49,12 +54,27 @@ function loadFunction($scope, structureService, storageService, $location, $docu
         redirectToLogin();
       }
     });
+    ref.addEventListener('exit',  function(event) {
+      if (toolbar == 'yes') {
+        redirectIndex();
+      }
+    });
 
   }
-  function showWarning() {
+
+  function redirectIndex () {
+    $location.path(structureService.get().config.index);
+    if(!$scope.$$phase) {
+      $scope.$apply();
+    }
+  };
+
+  function loadIframe() {
+    $document.find("#main paper-header-panel .paper-header").hide();
+    $scope.showIframe = true;
     setTimeout(function () {
-      $document.find("div.hiddenDiv").show();
-    }, 1000);
+      structureService.launchSpinner('.transitionloader');
+    }, 100);
   }
-
+  
 }

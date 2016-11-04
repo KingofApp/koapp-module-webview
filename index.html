@@ -1,5 +1,12 @@
 <div ng-controller="webviewCtrl" class="module webview">
-  <div class="hiddenDiv" style="display: none;" >
-    <koa-item>{{'webview.description' | translate}}</koa-item>
+
+  <div ng-if="showIframe">
+    <iframe hide-onload id="iframetest" type="text/html" allowfullscreen="" ng-src="{{webview.modulescope.url}}" frameborder="0" width="100%" height="100%" style="position:absolute"></iframe>
+    <div class='iframeLoading embedLoading'>
+      <div class='transitionloader'>
+      </div>
+    </div>
+    <div ng-click="redirectIndex();" class="closeBar"> {{'webview.close' | translate}} </div>
   </div>
+  <koa-nano></koa-nano>
 </div>

@@ -15,7 +15,7 @@
   },
   "icon": "code",
   "type": "A",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "King of App",
   "category": [
     "others"
@@ -30,7 +30,15 @@
   ],
   "view": "modules/webview/index.html",
   "files": [
-    "modules/webview/controller.js"
+    "modules/webview/controller.js",
+    "modules/webview/directive.js",
+    "modules/embed/styles.html"
+  ],
+  "libs": [
+    {
+      "bower": { "iframe-resizer": "^3.5.3" },
+      "src": "bower_components/iframe-resizer/js/iframeResizer.min.js"
+    }
   ],
   "scope": {
     "url": ""
