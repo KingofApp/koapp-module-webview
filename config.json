@@ -2,20 +2,20 @@
   "name": "Webview",
   "identifier": "webview",
   "description": {
-    "es-ES": "Esta opción te permite incrustar una página web en tu App. De este modo tus seguidores podrán navegar por ella sin necesidad de abandonar la aplicación. Para ello solo será necesario que entres la dirección web que quieras compartir. P.e. http://www.kingofapp.com",
-    "en-US": "Esta opción te permite incrustar una página web en tu App. De este modo tus seguidores podrán navegar por ella sin necesidad de abandonar la aplicación. Para ello solo será necesario que entres la dirección web que quieras compartir. P.e. http://www.kingofapp.com"
+    "es-ES": "Incrusta tu página web para que tus seguidores puedan navegar por ella sin necesidad de abandonar la aplicación.Entra la dirección de la página para activar el módulo. P.e. http://www.kingofapp.com",
+    "en-US": "Embed your webpage to allow your followers to navigate without the need of abandoning the application. Enter the web address to activate this module. E.j. http://www.kingofapp.com"
   },
   "documentation": {
     "es-ES": "modules/webview/documentation/es_ES.md",
     "en-US": "modules/webview/documentation/en_US.md"
   },
   "descriptionShort": {
-    "es-ES": "Esta opción te permite incrustar una página web dentro de tu App!",
-    "en-US": "Esta opción te permite incrustar una página web dentro de tu App!"
+    "es-ES": "Incrusta tu página web en tu app para mejorar el desempeño de tu servicio.",
+    "en-US": "Embed your webpage into your app through webview to improve service performance!"
   },
   "icon": "code",
   "type": "A",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "King of App",
   "category": [
     "others"
