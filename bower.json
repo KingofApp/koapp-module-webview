@@ -9,5 +9,7 @@
   "license": "MIT",
   "homepage": "http://kingofapp.com",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "iframe-resizer": "iframe-resizer#^3.5.3"
+  }
 }
