@@ -5,3 +5,9 @@ Si bien no es especialmente recomendable su uso (a los markets y especialmente a
 Al tratarse de un contenido embebido sólo hay que rellenar el campo habilitado con **la URL de destino**. Nada más y nada menos. Nosotros nos encargamos de que salga en pantalla cogiendo los **parámetros responsive** de la web.
 
 Lo dicho, si bien este módulo te puede ayudar en múltiples ocasiones, como todo gran poder, hay que saber utilizarlo con moderación y siempre combinado con otros módulos de contenido.
+
+### Details:
+
+- Author: King of app
+- Version: 1.0.8
+- Homepage:
