@@ -1,71 +1,75 @@
 {
-  "name": "Webview",
-  "identifier": "webview",
-  "description": {
-    "es-ES": "Incrusta tu página web para que tus seguidores puedan navegar por ella sin necesidad de abandonar la aplicación.Entra la dirección de la página para activar el módulo. P.e. http://www.kingofapp.com",
-    "en-US": "Embed your webpage to allow your followers to navigate without the need of abandoning the application. Enter the web address to activate this module. E.j. http://www.kingofapp.com"
-  },
-  "documentation": {
-    "es-ES": "modules/webview/documentation/es_ES.md",
-    "en-US": "modules/webview/documentation/en_US.md"
-  },
-  "descriptionShort": {
-    "es-ES": "Incrusta tu página web en tu app para mejorar el desempeño de tu servicio.",
-    "en-US": "Embed your webpage into your app through webview to improve service performance!"
-  },
-  "icon": "code",
-  "type": "A",
-  "version": "1.0.8",
-  "author": "King of App",
-  "category": [
-    "others"
-  ],
-  "price": 0,
-  "subscription": false,
-  "canContain": false,
-  "platforms": [
-    "android",
-    "ios",
-    "windows"
-  ],
-  "view": "modules/webview/index.html",
-  "files": [
-    "modules/webview/controller.js",
-    "modules/webview/directive.js",
-    "modules/webview/styles.html"
-  ],
-  "libs": [
-    {
-      "bower": { "iframe-resizer": "^3.5.3" },
-      "src": "bower_components/iframe-resizer/js/iframeResizer.min.js"
-    }
-  ],
-  "scope": {
-    "url": ""
-  },
-  "config": [{
-    "templateOptions": {
-      "label": "url",
-      "pattern": "(https?://)([/\\w.()-]*).*",
-      "required": true,
-      "description": "url del webview"
+    "name": "Webview",
+    "identifier": "webview",
+    "description": {
+        "es-ES": "Incrusta tu página web para que tus seguidores puedan navegar por ella sin necesidad de abandonar la aplicación.Entra la dirección de la página para activar el módulo. P.e. http://www.kingofapp.com",
+        "en-US": "Embed your webpage to allow your followers to navigate without the need of abandoning the application. Enter the web address to activate this module. E.j. http://www.kingofapp.com"
     },
-    "type": "input",
-    "key": "url"
-  }],
-  "showOn": {
-    "menu": true,
-    "market": true,
-    "dragDrop": true
-  },
-  "images": {
-    "list": "modules/webview/images/Webview_list.png",
-    "screenshots": [
-      "modules/webview/images/Webview_screenshot01.png",
-      "modules/webview/images/Webview_screenshot02.png"
+    "documentation": {
+        "es-ES": "modules/webview/documentation/es_ES.md",
+        "en-US": "modules/webview/documentation/en_US.md"
+    },
+    "descriptionShort": {
+        "es-ES": "Incrusta tu página web en tu app para mejorar el desempeño de tu servicio.",
+        "en-US": "Embed your webpage into your app through webview to improve service performance!"
+    },
+    "icon": "code",
+    "type": "A",
+    "version": "1.0.9",
+    "author": "King of App",
+    "category": [
+        "others"
     ],
-    "popover": "modules/webview/images/Webview_popover.png",
-    "banner": "modules/webview/images/Webview_popover.png",
-    "logo": "modules/webview/images/Webview_icon.png"
-  }
+    "price": 0,
+    "subscription": false,
+    "canContain": false,
+    "platforms": [
+        "android",
+        "ios",
+        "windows"
+    ],
+    "view": "modules/webview/index.html",
+    "files": [
+        "modules/webview/controller.js",
+        "modules/webview/directive.js",
+        "modules/webview/styles.html"
+    ],
+    "libs": [
+        {
+            "bower": {
+                "iframe-resizer": "^3.5.3"
+            },
+            "src": "bower_components/iframe-resizer/js/iframeResizer.min.js"
+        }
+    ],
+    "scope": {
+        "url": ""
+    },
+    "config": [
+        {
+            "templateOptions": {
+                "label": "url",
+                "pattern": "(https?://)([/\\w.()-]*).*",
+                "required": true,
+                "description": "url del webview"
+            },
+            "type": "input",
+            "key": "url"
+        }
+    ],
+    "showOn": {
+        "menu": true,
+        "market": true,
+        "dragDrop": true
+    },
+    "images": {
+        "list": "modules/webview/images/Webview_list.png",
+        "screenshots": [
+            "modules/webview/images/Webview_screenshot01.png",
+            "modules/webview/images/Webview_screenshot02.png"
+        ],
+        "popover": "modules/webview/images/Webview_popover.png",
+        "banner": "modules/webview/images/Webview_popover.png",
+        "logo": "modules/webview/images/Webview_icon.png"
+    }
 }
