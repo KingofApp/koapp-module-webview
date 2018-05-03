@@ -9,5 +9,5 @@ Lo dicho, si bien este módulo te puede ayudar en múltiples ocasiones, como tod
 ### Details:
 
 - Author: King of app
-- Version: 1.0.8
+- Version: 1.0.9
 - Homepage:

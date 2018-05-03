@@ -1,6 +1,6 @@
 {
     "name": "koapp-module-webview",
-    "version": "1.0.10",
+    "version": "1.0.9",
     "description": "Esta opción te permite incrustar una página web dentro de tu App!",
     "directories": {
         "test": "test"
